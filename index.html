@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TETRIS</title>
+</head>
+<body>
+    <div class="main">
+        <div class="panel">
+            <div id="header">
+                <div id="element">Score
+                    <div id="score" class="box">0</div>
+                </div>
+                <div id="element">Timer
+                    <div id="timerDisplay" class="box">0 sec</div>
+                </div>
+                <!-- Button to open the side panel -->
+            <button class="open-panel-btn" onclick="toggleSidePanel()">Setting</button>
+
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <button class="close-btn" onclick="toggleSidePanel()">Close Panel</button>
+                <!-- Add your music controls here -->
+                <button onclick="playMusic()">Play Music</button>
+                <button onclick="pauseMusic()">Pause Music</button>
+                <label for="volumeControl">Volume:</label>
+                <input id="volumeControl" type="range" min="0" max="1" step="0.01" class="volume-slider" onchange="setVolume(this.value)">
+            </div>               
+        
+            <audio id="backgroundMusic" loop>
+                <source src="music-for-puzzle-game-146738.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            </div>
+            <canvas id="tetrisCanvas"></canvas>
+            <div class="button-container">
+                <button class="button" onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()" ontouchend="clearmove()">ROTATE</button><br><br>
+                <button class="button" onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()" ontouchend="clearmove()">LEFT</button>
+                <button class="button" onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()" ontouchend="clearmove()">RIGHT</button>
+                <br><br>
+                <button class="button" onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()" ontouchend="clearmove()">DOWN</button>
+            </div>
+            <!-- Retry Button -->
+            <button id="retryButton" style="display:none;" onclick="retryGame()" class="button">Retry</button>
+
+            
+        </div>
+    </div>
+    <!-- Link to the external JavaScript file -->
+    <script src="tetris.js"></script>
+</body>
+</html>

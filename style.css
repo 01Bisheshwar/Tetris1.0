@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+
+}
+.main{
+    background-color: rgb(138, 144, 167);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.panel{
+    width: 90%;
+    height: 90%;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#header{
+    padding: 0 10%;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(255, 217, 246);
+    display: flex;
+    justify-content: space-around;
+    gap: 20%;
+}
+#element{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.box{
+    padding: 0 20%;
+    background-color: white;
+    border-radius: 30px;
+    color: blue;
+    font-weight: 600;
+}
+canvas {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    border: 1px solid #000;
+    background-color: #d2d1cd;
+}
+/* Style for the button container */
+.button-container {
+    text-align: center;
+    width: 500px;
+}
+
+/* Style for individual buttons */
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text color */
+    padding: 15px 32px; /* Increased padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline-block for proper alignment */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Margin for spacing between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Active effect */
+.button:active {
+    background-color: #388e3c; /* Even darker green on click */
+    transform: scale(0.95); /* Slightly shrink button */
+}
+
+.open-panel-btn {
+    position: fixed;
+    top: 10px; /* Adjust this value to position the button at the top */
+    right: 10px; /* Adjust this value to position the button on the right */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes the button round */
+    width: 40px; /* Small width */
+    height: 40px; /* Small height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 16px; /* Adjust this value to change the icon size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+}
+
+.open-panel-btn:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Button to close the panel */
+.close-btn {
+    align-self: flex-end;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Add some space from the top */
+}
+
+/* Music controls */
+.side-panel button,
+.side-panel input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* Ensure responsiveness on mobile devices */
+@media (max-width: 600px) {
+    .open-panel-btn {
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+    
+    .side-panel {
+        width: 100%;
+    }
+}
